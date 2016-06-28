@@ -1,0 +1,66 @@
+<ion-view view-title="Mean Fullswell">
+
+    <ion-nav-title>
+        <div ng-show="!shouldShowSearchInput()" style="text-align: center">
+            Mean Full Swell
+        </div>
+        <div ng-show="shouldShowSearchInput()">
+            <label ng-show="shouldShowSearchInput()"
+                   class="item-input-wrapper"
+                   style="font-size: 1.1em; margin-top:0.20em; border-radius: 0px; padding-right: 0px;">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" style="width:100%; padding-left:5px;"
+                       ng-model="mean_filter_text">
+            </label>
+        </div>
+    </ion-nav-title>
+    
+    <ion-nav-buttons side="secondary">
+        <div class="buttons">
+            <button class="button button-icon icon ion-android-search"
+                    ng-click="showSearchInput();"></button>
+            <button class="button button-icon icon ion-plus-circled"
+                    ng-click="add_item()">
+            </button>
+        </div>
+    </ion-nav-buttons>
+    
+    <ion-content>
+        <ion-refresher
+             pulling-text="Pull to refresh..."
+             on-refresh="refresh_items()">
+        </ion-refresher>
+        <div class="card responsive-card"
+             ng-repeat="item in mean_items | match_text:mean_filter_text ">
+            <ion-item class="item item-thumbnail-left"
+                      >
+                <img ng-src="{{item.image || item.url + '/favicon.ico'}}"
+                     style="cursor:pointer;"
+                     ng-click="alert('img');">
+                <h1>
+                        <div class="buttons">
+                            <button class="button button-icon icon ion-more"
+                                    style="cursor:pointer; position: absolute; top: -5px; right: 5px; color: lavender"
+                                    ng-click="alert('more');">
+                            </button>
+                        </div>
+                        <!--
+                        <a href="#" class="item-icon-right"
+                           style="position: absolute; top: 15px; right: 5px; color: lavender">
+                            <i class="icon ion-more"></i>
+                        </a>
+                        -->
+                    {{item.name}}
+                </h1>
+                <p>
+                    <ul style="display: inline;">
+                        <li ng-repeat="tag in item.tag" style="display:inline;">
+                            {{tag + " "}}
+                        </li>
+                    </ul>
+                </p>
+            </ion-item>
+        </div>
+        
+    </ion-content>
+</ion-view>
