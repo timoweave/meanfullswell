@@ -1,4 +1,13 @@
 <ion-view view-title="Issue List">
+
+    <ion-nav-buttons side="secondary">
+        <div class="buttons">
+            <button class="button button-icon icon ion-plus-circled"
+                    ng-click="todo.add()">
+            </button>
+        </div>
+    </ion-nav-buttons>
+    
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="todo in todo_list"
@@ -7,6 +16,7 @@
                       >
                 <i class="icon {{todo.icon}}"></i>
                 {{todo.text}}
+                <!-- edit button goes to todolist_form.html  -->
             </ion-item>
         </ion-list>
     </ion-content>

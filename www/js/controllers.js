@@ -1,5 +1,6 @@
 
-angular.module('MeanStarter.controllers', ['ionic'])
+angular.module('MeanStarter.controllers', ['ionic' // 'ionic-material'
+                                          ])
 
 .filter('filter_text', function() { return filter_text; })
 
@@ -9,7 +10,7 @@ angular.module('MeanStarter.controllers', ['ionic'])
 
 .controller('MeanStuffsCtrl', ['$scope', '$ionicPopover', '$ionicModal', MeanStuffsCtrl])
 
-.controller('ToDoListCtrl', ['$scope', ToDoListCtrl])
+.controller('ToDoListCtrl', ['$scope', '$ionicModal', ToDoListCtrl])
 
 ; // angular.module('MeanStarter.controllers', [])
 
@@ -54,30 +55,90 @@ function filter_text(firebase_inputs, filter_text)
   return firebase_outputs;
 }
 
-function ToDoListCtrl($scope)
+function ToDoListCtrl($scope, $ionicModal)
 {
+  $scope.todo_icon_color = {
+    "ion-lightbulb" : { "icon" : "ion-lightbulb", "color" : "grey", "checkbox_color" : "checkbox-calm", "text" : "idea" },
+    "ion-bug" : { "icon" : "ion-bug", "color" : "red", "checkbox_color" : "checkbox-assertive", "text" : "bug" },
+    "ion-wrench" : { "icon" : "ion-wrench", "color" : "orange", "checkbox_color" : "checkbox-energized", "text" : "fixing" },
+    "ion-beaker" : { "icon" : "ion-beaker", "color" : "dark", "checkbox_color" : "checkbox-dark", "text" : "testing" },
+    "ion-checkmark" : { "icon" : "ion-checkmark", "color" : "green", "checkbox_color" : "checkbox-balanced", "text" : "done" }
+  };
 
   $scope.todo_color = function(icon) {
-    var todo_color_map = {
-      'ion-more' : 'darkgrey',
-      'ion-ios-more-outline' : 'grey',
-      'ion-checkmark' : 'green',
-      'ion-bug' : 'red'
-    };
-    
-    return todo_color_map[icon];
+    var todo_color_default = 'brown';
+    return $scope.todo_icon_color[icon]['color'] || todo_color_default;
   }
 
   $scope.todo_list = undefined;
   var todo_list = firebase.database().ref("todos");
-  todo_list.once('value').then(save_data("todo_list"));
-  todo_list.on('value', save_data("data_list"));
+  todo_list.once('value').then(read_in("todo_list"));
+  todo_list.on('value', read_in("data_list"));
 
-  function save_data(lhs) {
+  function read_in(lhs) {
     return function(rhs) {
       $scope[lhs] = rhs.val();
     }
   }
+
+  function push_out(lhs) {
+    todo_list.push(lhs);
+  }
+
+  function save_out(lhs) {
+    firebase.database().ref().push();
+  }
+  
+  $scope.todo = undefined; // todo data form to add/edit todos on the firebase
+  $ionicModal.fromTemplateUrl('templates/todolist_form.html', {
+    scope : $scope,
+    animation : 'slide-in-up'
+  }).then(function(modal) {
+    var default_title = "Issue Detail";
+    $scope.todo = {
+      form : modal,
+      title : default_title,
+      input : {}, // data form modal for firebase todos
+      add : function() {
+        $scope.todo.title = "New Issue";
+        $scope.todo.input = {};
+        $scope.todo.form.show();        
+      },
+      edit : function(input) {
+        $scope.todo.input =  input || $scope.todo.input;
+        $scope.todo.title = "Edit Issue";
+        $scope.todo.form.show();
+      },
+      close : function() {
+        $scope.todo.form.hide();
+        $scope.todo.title = default_title;
+      },
+      save : function(input) {
+        // update existing data to firebase
+        // todo_list.save();
+      },
+      submit : function(input) {
+        // save new data to firebase
+        input = input || $scope.todo.input;
+        console.log("Submit todo issue: ", JSON.stringify(input));
+        todo_list.push(input);
+      },
+      init_handlers : (
+        function() {
+          $scope.$on('$destory', function() {
+            $scope.todo.form.remove();
+          });
+          $scope.$on('modal.hidden', function() {
+            // TBD
+          });
+          $scope.$on('modal.removed', function() {
+            // TBD
+          });
+          return undefined;
+        }
+      )()
+    }
+  });
 }
 
 function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
@@ -89,14 +150,14 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
   $scope.mean_items_filter_text = ""; // use with mean_items_filter() ...
 
   var items = firebase.database().ref("items");
-  items.once('value').then(save_data("mean_items"));
-  items.on('value', save_data("mean_items"));
+  items.once('value').then(read_in("mean_items"));
+  items.on('value', read_in("mean_items"));
 
   var tags = firebase.database().ref("tags");
-  tags.once('value').then(save_data("mean_tags"));
-  tags.on('value', save_data("mean_tags"));  
+  tags.once('value').then(read_in("mean_tags"));
+  tags.on('value', read_in("mean_tags"));  
 
-  function save_data(lhs) {
+  function read_in(lhs) {
     return function(rhs) {
       $scope[lhs] = rhs.val();
     }
@@ -146,7 +207,7 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
         $scope.more.popover.show($event);
       },
       goto_url : function(url) {
-        console.log("url", url);
+        // console.log("url", url);
         $scope.goto_url(url);
         $scope.more.close();
       },
@@ -195,7 +256,7 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
       edit : function(inputs) {
         $scope.data.input = inputs || $scope.more.input;
         $scope.data.input.tags = $scope.data.input.tag.join(" ");
-        console.log("edit", JSON.stringify($scope.data.input));
+        // console.log("edit", JSON.stringify($scope.data.input));
         $scope.data.title = "Edit " + $scope.data.input.name;
         $scope.data.form.show();
         $scope.more.close();

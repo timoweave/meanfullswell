@@ -79,7 +79,27 @@
 }
 */
 
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 199px) {
+    .responsive-card {
+        width: 90%;
+    }
+    .card-thumbnail-image {
+        
+    }
+    .item-thumbnail-left {
+        /*
+        pading-left : 0px !important;
+        pading-right : 0px !important;
+       */
+    }
+    h1, h2, h3, h4, p, li, ul, .card-button-more {
+        /*
+        display : none !important;
+       */
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 399px) {
     .responsive-card {
         width: 94%;
         float: left;

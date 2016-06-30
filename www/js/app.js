@@ -1,5 +1,5 @@
 
-angular.module('MeanStarter', ['ionic',
+angular.module('MeanStarter', ['ionic', // 'ionic-material',
                                'MeanStarter.controllers',
                                'MeanStarter.services'])
 
