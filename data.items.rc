@@ -65,6 +65,10 @@ firebase database:push "/items" -d '{ "id" : 55, "name" : "glup", "url" : "http:
 
 firebase database:push "/items" -d '{ "id" : 56, "name" : "newman", "url" : "https://github.com/postmanlabs/newman", "image" : "https://camo.githubusercontent.com/1f7577d15b8d4576abf3a6c9d153dcab03972c66/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f7765622d6172746566616374732f6e65776d616e2d3132382e706e67", "tag" : ["tool"], "github" : "https://github.com/postmanlabs/newman" }'
 
+firebase database:push "/items" -d '{ "id" : 57, "name" : "stripe", "url" : "https://stripe.com", "image" : "https://avatars1.githubusercontent.com/u/856813?v=3&s=200", "tag" : ["tool"], "github" : "https://github.com/stripe", "doc" : "https://stripe.com/docs/stripe.js?" }'
+
+
+
 ####
 firebase database:push "/items" -d '{ "id" : 0, "name" : "", "url" : "", "image" : "", "tag" : ["tool"], "github" : "" }'
 

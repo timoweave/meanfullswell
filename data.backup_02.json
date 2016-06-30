@@ -1,0 +1,619 @@
+{
+  "items" : {
+    "-KLIa9qf7oIzBGvBLxpb" : {
+      "github" : "",
+      "id" : 0,
+      "image" : "http://meanjs.org/img/icon.png",
+      "name" : "meanjs",
+      "tag" : [ "framework" ],
+      "url" : "https://www.meanjs.org"
+    },
+    "-KLIaAUZf30ohbUCWFG6" : {
+      "github" : "",
+      "id" : 1,
+      "image" : "http://ionicframework.com/present-ionic/slides/img/angular-icon.png",
+      "name" : "angular",
+      "tag" : [ "framework", "library" ],
+      "url" : "http://www.angularjs.org"
+    },
+    "-KLIaB6Rq0og73JWckpl" : {
+      "github" : "",
+      "id" : 2,
+      "image" : "https://node-os.com/images/nodejs.png",
+      "name" : "node",
+      "tag" : [ null, "framework" ],
+      "url" : "https://wwww.nodejs.org"
+    },
+    "-KLIaBjKiVGxJ1EUmNfN" : {
+      "github" : "",
+      "id" : 3,
+      "image" : "http://www.davidwightman.org/github-icon.gif",
+      "name" : "github",
+      "tag" : [ "tool" ],
+      "url" : "https://github.com"
+    },
+    "-KLIaCMb9Gk3ZS-NnW8q" : {
+      "github" : "",
+      "id" : 4,
+      "image" : "https://gitlab.com/uploads/project/avatar/13083/gitlab-logo-square.png",
+      "name" : "gitlab",
+      "tag" : [ "tool" ],
+      "url" : "https://about.gitlab.com"
+    },
+    "-KLIaCyrVM5yfWj3Wh69" : {
+      "github" : "",
+      "id" : 5,
+      "image" : "https://lh4.googleusercontent.com/Dfqo9J42K7-xRvHW3GVpTU7YCa_zpy3kEDSIlKjpd2RAvVlNfZe5pn8Swaa4TgCWNTuOJOAfwWY=s100-h100-e365-rw",
+      "name" : "postman",
+      "tag" : [ "tool" ],
+      "url" : "https://www.getpostman.com"
+    },
+    "-KLIaDce44U6v9l8PBWY" : {
+      "github" : "",
+      "id" : 6,
+      "image" : "https://daniel.haxx.se/blog/wp-content/uploads/2016/05/curl-symbol.png",
+      "name" : "curl",
+      "tag" : [ "tool" ],
+      "url" : "https://curl.haxx.se"
+    },
+    "-KLIaEHKEnw7xoofIzhj" : {
+      "github" : "",
+      "id" : 7,
+      "image" : "http://olh.sourceforge.net/gnu-tn160.png",
+      "name" : "wget",
+      "tag" : [ "tool" ],
+      "url" : "https://www.gnu.org/software/wget"
+    },
+    "-KLIaEodNstFmY6f071z" : {
+      "github" : "https://github.com/jkbrzt/httpie",
+      "id" : 8,
+      "image" : "https://raw.github.com/claudiatd/httpie-artwork/master/images/httpie_logo_simple.png",
+      "name" : "httpie",
+      "tag" : [ "tool" ],
+      "url" : ""
+    },
+    "-KLIaFNpOV43IOtBoh44" : {
+      "github" : "",
+      "id" : 9,
+      "image" : "https://pbs.twimg.com/profile_images/2536744912/lejvzrnlpb308aftn31u_400x400.png",
+      "name" : "npm",
+      "tag" : [ "package" ],
+      "url" : "https://www.npmjs.com"
+    },
+    "-KLIaFyqOWc5mRO5zWqZ" : {
+      "github" : "",
+      "id" : 10,
+      "image" : "https://bower.io/img/bower-logo.png",
+      "name" : "bower",
+      "tag" : [ "package" ],
+      "url" : "https://bower.io"
+    },
+    "-KLIaGYcnBRexqJLL1ns" : {
+      "github" : "",
+      "id" : 11,
+      "image" : "https://pbs.twimg.com/profile_images/3786155988/46ea2dd8b1bdd31a8ba61044cb5b6ebe_400x400.png",
+      "name" : "yeoman",
+      "tag" : [ "package" ],
+      "url" : "http://www.yeoman.io"
+    },
+    "-KLIaH7NHmUMi7Yl-GAe" : {
+      "github" : "",
+      "id" : 12,
+      "image" : "https://avatars0.githubusercontent.com/u/9637642?v=3&s=400",
+      "name" : "babel",
+      "tag" : [ "language", "transpiler" ],
+      "url" : "https://babeljs.io"
+    },
+    "-KLIaHdScBxnm-QTY6-W" : {
+      "github" : "",
+      "id" : 13,
+      "image" : "https://camo.githubusercontent.com/7e41f7b08503cb40c113d35bbc6cb305abf0d086/68747470733a2f2f676f6f676c652e6769746875622e636f6d2f747261636575722d636f6d70696c65722f6c6f676f2f74632e737667",
+      "name" : "traceur",
+      "tag" : [ "language", "transpiler" ],
+      "url" : "https://github.com/google/traceur-compiler"
+    },
+    "-KLIaIBmI5_jh389Q1KD" : {
+      "github" : "",
+      "id" : 14,
+      "image" : "http://livereload.com/images/LiveReload_350.png",
+      "name" : "livereload",
+      "tag" : [ "tool" ],
+      "url" : "http://livereload.com"
+    },
+    "-KLIaIp7-z2c0gYXe4ul" : {
+      "github" : "",
+      "id" : 15,
+      "image" : "https://blog.getsentry.com/img/post-images/source-maps/webpack.svg",
+      "name" : "webpack",
+      "tag" : [ "tool" ],
+      "url" : "https://webpack.github.io"
+    },
+    "-KLIaJNz9lz0fewXHy4k" : {
+      "github" : "",
+      "id" : 16,
+      "image" : "https://pbs.twimg.com/profile_images/420347030263701504/9esmqty2_400x400.png",
+      "name" : "browserify",
+      "tag" : [ "tool" ],
+      "url" : "http://browserify.org"
+    },
+    "-KLIaJuv4t-palHw01Vn" : {
+      "github" : "",
+      "id" : 17,
+      "image" : "https://pbs.twimg.com/profile_images/2536744912/lejvzrnlpb308aftn31u_400x400.png",
+      "name" : "json-server",
+      "tag" : [ "library" ],
+      "url" : "https://www.npmjs.com/package/json-server"
+    },
+    "-KLIaKSLZiH0FGIP79vt" : {
+      "github" : "",
+      "id" : 18,
+      "image" : "https://pbs.twimg.com/profile_images/2536744912/lejvzrnlpb308aftn31u_400x400.png",
+      "name" : "http-server",
+      "tag" : [ "library", "tool" ],
+      "url" : "https://www.npmjs.com/package/http-server"
+    },
+    "-KLIaKzhI88IzC8upfid" : {
+      "github" : "",
+      "id" : 19,
+      "image" : "https://www.docker.com/sites/default/files/docker_banner_image_12312.svg",
+      "name" : "docker",
+      "tag" : [ "tool", "container" ],
+      "url" : "https://www.docker.com"
+    },
+    "-KLIaLXGeW9b94BYIv5J" : {
+      "github" : "",
+      "id" : 20,
+      "image" : "https://tristandunn.com/assets/posts/2014-12-15/vagrant-37a8dae94bf3d679c31754ea0303013bf672090a6e29740b7a985dc6b80e90a8.jpg",
+      "name" : "vigrant",
+      "tag" : [ "container" ],
+      "url" : "https://www.vagrantup.com"
+    },
+    "-KLIaM6YgAvuUb78h967" : {
+      "github" : "",
+      "id" : 21,
+      "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIHBuEj75QSbnMRIWbMhyg_o1tFjz925YIEk5H0gXc4OqraNI7fA",
+      "name" : "virtualbox",
+      "tag" : [ "container" ],
+      "url" : "https://www.virtualbox.org"
+    },
+    "-KLIaMhzR-rvVaRqZUeO" : {
+      "github" : "",
+      "id" : 22,
+      "image" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSa3D3GmU9UYXLLBJ6WqYyi66YtVwCprlJ08F9P5ONSzoWj7lJY",
+      "name" : "vmware",
+      "tag" : [ "container" ],
+      "url" : "http://www.vmware.com"
+    },
+    "-KLIaNFUdsSfD_VlXxA_" : {
+      "github" : "",
+      "id" : 23,
+      "image" : "http://img.stackshare.io/stack/144/43sHKeth.png",
+      "name" : "heroku",
+      "tag" : [ "hosting" ],
+      "url" : "https://www.heroku.com"
+    },
+    "-KLIaNlJof4UcsbNWE3t" : {
+      "github" : "",
+      "id" : 24,
+      "image" : "https://pbs.twimg.com/profile_images/667756760841613312/Ot0CLWpu.png",
+      "name" : "digital ocean",
+      "tag" : [ "hosting" ],
+      "url" : "https://www.digitalocean.com"
+    },
+    "-KLIaOKODv9o70DuV0EA" : {
+      "github" : "",
+      "id" : 25,
+      "image" : "https://camo.githubusercontent.com/fe999623901099cc8848de1037ac82536986d342/687474703a2f2f6d65616e2e696f2f73797374656d2f6173736574732f696d672f6c6f676f732f6d65616e6c6f676f2e706e67",
+      "name" : "meanio",
+      "tag" : [ "framework" ],
+      "url" : "meanio.com"
+    },
+    "-KLIaOuQPo2SOIaWR8Yz" : {
+      "github" : "",
+      "id" : 26,
+      "image" : "https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png",
+      "name" : "react.js",
+      "tag" : [ "library" ],
+      "url" : ""
+    },
+    "-KLIaPWuF3bpkfkEXlov" : {
+      "github" : "",
+      "id" : 27,
+      "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMU2VySqefarMRXOOScw7Nl5hacQL2ZYM8EIX71bv7O6980oj_qw",
+      "name" : "ghost",
+      "tag" : [ "library" ],
+      "url" : ""
+    },
+    "-KLIaQ7ADhsZgTsSP5U4" : {
+      "github" : "",
+      "id" : 28,
+      "image" : "https://pbs.twimg.com/profile_images/1305432975/leaflet_upic_400x400.png",
+      "name" : "leaflet",
+      "tag" : [ "library" ],
+      "url" : ""
+    },
+    "-KLIaQhnSRgw9l9wL_PV" : {
+      "github" : "",
+      "id" : 29,
+      "image" : "https://g.twimg.com/dev/flight/2015/mapbox-logo.png",
+      "name" : "mapbox",
+      "tag" : [ "library" ],
+      "url" : "https://www.mapbox.com/"
+    },
+    "-KLIaRFuZWhrv0-LoMyZ" : {
+      "github" : "",
+      "id" : 30,
+      "image" : "https://camo.githubusercontent.com/6cf90bd5c928f5c58116666f4102371641883ad5/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f313036373930372f323136303134322f30333036353666342d393462342d313165332d393865362d3732343336393830666462652e6a7067",
+      "name" : "less",
+      "tag" : [ "style" ],
+      "url" : "http://lesscss.org/"
+    },
+    "-KLIaRqTidqOfahG_l56" : {
+      "github" : "",
+      "id" : 31,
+      "image" : "http://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg",
+      "name" : "sass",
+      "tag" : [ "style" ],
+      "url" : "http://sass-lang.com/"
+    },
+    "-KLIaSP6L6tydZrtaNs6" : {
+      "github" : "",
+      "id" : 32,
+      "image" : "http://testingmasters.com/wp-content/uploads/Selenium.png",
+      "name" : "selenium",
+      "tag" : [ "test" ],
+      "url" : "http://www.seleniumhq.org/"
+    },
+    "-KLIaT-BjggDjLDTUd-n" : {
+      "github" : "",
+      "id" : 33,
+      "image" : "https://pbs.twimg.com/profile_images/460382820565659648/Ihf7jKaE.png",
+      "name" : "nightwatch",
+      "tag" : [ "test" ],
+      "url" : "http://nightwatchjs.org"
+    },
+    "-KLIaTZPEmWDXc3noLXj" : {
+      "github" : "",
+      "id" : 34,
+      "image" : "https://avatars0.githubusercontent.com/u/8770005?v=3&s=400",
+      "name" : "mocha",
+      "tag" : [ "test" ],
+      "url" : "https://mochajs.org"
+    },
+    "-KLIaU7CwrNz8sf_3PEb" : {
+      "github" : "",
+      "id" : 35,
+      "image" : "https://gaslight-blog.s3.amazonaws.com/how-we-handled-the-problem-of-js-date-slash-time-equality/chai.png",
+      "name" : "chai",
+      "tag" : [ "test" ],
+      "url" : "http://chaijs.com"
+    },
+    "-KLIaUfwDcbDw7Fk7Hzt" : {
+      "github" : "",
+      "id" : 36,
+      "image" : "https://senchamarket-images-production.s3.amazonaws.com/uploads/screenshot/file/465/big_sinon_logo.png",
+      "name" : "sinon",
+      "tag" : [ "test" ],
+      "url" : "http://sinonjs.org"
+    },
+    "-KLIaVFhUxNqOoa-ZM_4" : {
+      "github" : "",
+      "id" : 37,
+      "image" : "http://g00glen00b.be/wp-content/uploads/2015/09/jasmine-logo-big.png",
+      "name" : "jasmine",
+      "tag" : [ "test" ],
+      "url" : "http://jasmine.github.io"
+    },
+    "-KLIaVpxRHsZwiXGpD9N" : {
+      "github" : "",
+      "id" : 38,
+      "image" : "https://avatars1.githubusercontent.com/u/3284117?v=3&s=400",
+      "name" : "karma",
+      "tag" : [ "test" ],
+      "url" : "https://karma-runner.github.io"
+    },
+    "-KLIaWODLBe7lsLPaBfF" : {
+      "github" : "",
+      "id" : 39,
+      "image" : "https://blog.travis-ci.com/images/travis-mascot-200px.png",
+      "name" : "travis-ci",
+      "tag" : [ "test" ],
+      "url" : "https://travis-ci.org"
+    },
+    "-KLIaWzJgoF183F8mNvT" : {
+      "github" : "",
+      "id" : 40,
+      "image" : "https://gitlab.com/uploads/project/avatar/250833/runner_logo.png",
+      "name" : "gitlab-ci",
+      "tag" : [ "test", "tool" ],
+      "url" : "https://about.gitlab.com/gitlab-ci"
+    },
+    "-KLIaXXyLrHLjbo4E82X" : {
+      "github" : "",
+      "id" : 41,
+      "image" : "https://avatars0.githubusercontent.com/u/1335026?v=3&s=200",
+      "name" : "firebase",
+      "tag" : [ "tool", "hosting" ],
+      "url" : "https://www.firebase.com"
+    },
+    "-KLIaY5okfUCnbWVSDCY" : {
+      "github" : "",
+      "id" : 42,
+      "image" : "http://ionicframework.com/img/homepage/ionicview-icon_2x.png",
+      "name" : "ionic",
+      "tag" : [ "library", "framework" ],
+      "url" : "http://ionic.io"
+    },
+    "-KLIaYcuNvUL3dn6-AGd" : {
+      "github" : "",
+      "id" : 43,
+      "image" : "https://cordova.apache.org/static/img/cordova_bot.png",
+      "name" : "cordova",
+      "tag" : [ "library" ],
+      "url" : "https://cordova.apache.org/"
+    },
+    "-KLIaZAlfGVYgfATxhey" : {
+      "github" : "",
+      "id" : 44,
+      "image" : "http://nodejs-cloud.com/img/128px/expressjs.png",
+      "name" : "express",
+      "tag" : [ "library" ],
+      "url" : "http://expressjs.com/"
+    },
+    "-KLIaZhY_LeZezHf79x2" : {
+      "github" : "",
+      "id" : 45,
+      "image" : "http://mongodb-tools.com/img/mongoose.png",
+      "name" : "mongoose",
+      "tag" : [ "library", "database" ],
+      "url" : "http://mongoosejs.com"
+    },
+    "-KLIa_GOUAL1mNyuHVVV" : {
+      "github" : "",
+      "id" : 46,
+      "image" : "https://camo.githubusercontent.com/077cf129a9834cb1d4dce35c02a00b4b0cad7799/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3537323139362f3139353538312f39666537366164612d376666372d313165322d396334322d3764383634396433653262322e706e67",
+      "name" : "passport",
+      "tag" : [ "library" ],
+      "url" : "http://passportjs.org/"
+    },
+    "-KLIa_ohLXpr51iBxsxh" : {
+      "github" : "",
+      "id" : 47,
+      "image" : "https://digdata.io/static/art/mongo.png",
+      "name" : "mongodb",
+      "tag" : [ "database" ],
+      "url" : "https://www.mongodb.com"
+    },
+    "-KLNMm0THpeJ1He_Z2Bv" : {
+      "github" : "",
+      "id" : 49,
+      "image" : "https://git-for-windows.github.io/img/git_logo.png",
+      "name" : "git",
+      "tag" : [ "tool" ],
+      "url" : "https://git-scm.com"
+    },
+    "-KLNMwCuWj73bnySRujM" : {
+      "github" : "",
+      "id" : 48,
+      "image" : "https://bootstrapcreative.com/wp-bc/wp-content/uploads/2016/01/bootstrap-logo.png",
+      "name" : "bootstrap",
+      "tag" : [ "library", "style" ],
+      "url" : "http://getbootstrap.com"
+    },
+    "-KLNPHreoSu2q6Fu07Nl" : {
+      "github" : "",
+      "id" : 50,
+      "image" : "https://blog.rosehosting.com/blog/wp-content/uploads/2014/11/jenkins.png",
+      "name" : "jenkins",
+      "tag" : [ "tool", "test" ],
+      "url" : "https://jenkins.io/"
+    },
+    "-KLNPLBUvIWzt9wC5HD4" : {
+      "github" : "",
+      "id" : 52,
+      "image" : "https://pbs.twimg.com/profile_images/451968255846928384/0pyDMTyp.png",
+      "name" : "bowser stack",
+      "tag" : [ "tool" ],
+      "url" : "https://www.browserstack.com/"
+    },
+    "-KLNPQnOBeYz-OaUCBQR" : {
+      "github" : "",
+      "id" : 53,
+      "image" : "https://pbs.twimg.com/profile_images/704462412880093184/IkgItC1R_400x400.jpg",
+      "name" : "sauce labs",
+      "tag" : [ "tool" ],
+      "url" : "https://saucelabs.com/"
+    },
+    "-KLNQ_uS7S084GYfCfWP" : {
+      "github" : "",
+      "id" : 54,
+      "image" : "https://pbs.twimg.com/profile_images/638753218613280768/zK11Va5r.png",
+      "name" : "google map",
+      "tag" : [ "library" ],
+      "url" : "https://developers.google.com/maps/"
+    },
+    "-KLN_MOdsVcgB2tffFeX" : {
+      "github" : "",
+      "id" : 55,
+      "image" : "https://avatars0.githubusercontent.com/u/6200624?v=3&s=400",
+      "name" : "glup",
+      "tag" : [ "tool" ],
+      "url" : "http://gulpjs.com/"
+    },
+    "-KLNt21cBo50c5Oonch1" : {
+      "github" : "https://github.com/postmanlabs/newman",
+      "id" : 56,
+      "image" : "https://camo.githubusercontent.com/1f7577d15b8d4576abf3a6c9d153dcab03972c66/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f7765622d6172746566616374732f6e65776d616e2d3132382e706e67",
+      "name" : "newman",
+      "tag" : [ "tool" ],
+      "url" : "https://github.com/postmanlabs/newman"
+    },
+    "-KLUf7fiEO_4ULSN_Dej" : {
+      "doc" : "https://stripe.com/docs/stripe.js?",
+      "github" : "https://github.com/stripe",
+      "id" : 57,
+      "image" : "https://avatars1.githubusercontent.com/u/856813?v=3&s=200",
+      "name" : "stripe",
+      "tag" : [ "tool" ],
+      "url" : "https://stripe.com"
+    }
+  },
+  "tags" : {
+    "-KLIagBsdzH0GJxpTcAf" : {
+      "id" : 0,
+      "name" : "frontend"
+    },
+    "-KLIah9IO7nuJ_02_8F1" : {
+      "id" : 1,
+      "name" : "backend"
+    },
+    "-KLIahlbaBnCLMDSJ-5k" : {
+      "id" : 2,
+      "name" : "database"
+    },
+    "-KLIaiMDWQAVCM5f8iOc" : {
+      "id" : 3,
+      "name" : "ux/ui"
+    },
+    "-KLIaiwnIZYw7A9UlHLv" : {
+      "id" : 4,
+      "name" : "tool"
+    },
+    "-KLIajZXv6W-FVhDcEo-" : {
+      "id" : 5,
+      "name" : "test"
+    },
+    "-KLIak7qcK8dXj6-vRZG" : {
+      "id" : 6,
+      "name" : "language"
+    },
+    "-KLIakfJbkSPJf4KyI8t" : {
+      "id" : 7,
+      "name" : "style"
+    },
+    "-KLIalFZ5Wu9k9-BbAoF" : {
+      "id" : 8,
+      "name" : "package"
+    },
+    "-KLIalpAnzyCZSFu8dVk" : {
+      "id" : 9,
+      "name" : "library"
+    },
+    "-KLIamP0cB_RHnBcrvGD" : {
+      "id" : 10,
+      "name" : "framework"
+    },
+    "-KLIamwqAFvmMutfn2Ut" : {
+      "id" : 11,
+      "name" : "platform"
+    },
+    "-KLIanUuQsZuh0kkYAdq" : {
+      "id" : 12,
+      "name" : "container"
+    },
+    "-KLIao3J5Hz_ZP4dF95L" : {
+      "id" : 13,
+      "name" : "hosting"
+    },
+    "-KLIaocJYSK4Aqcfoufp" : {
+      "id" : 14,
+      "name" : "transpiler"
+    },
+    "-KLIapBYdJ1g-jhxsd9l" : {
+      "id" : 15,
+      "name" : "misc"
+    }
+  },
+  "todos" : {
+    "-KLU36F2W_rMCP-GUF49" : {
+      "icon" : "ion-bug",
+      "id" : 0,
+      "text" : "search-input focus"
+    },
+    "-KLU36rCdp_rNlnLjLyK" : {
+      "icon" : "ion-checkmark",
+      "id" : 1,
+      "text" : "move to-do list into json-server, firebase, or some sort of server"
+    },
+    "-KLU37oHbYd4NOEAsdLI" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 2,
+      "text" : "search-input, at the header, animates and slides from right to left"
+    },
+    "-KLU38RclYiTrwzLoz1M" : {
+      "icon" : "ion-checkmark",
+      "id" : 3,
+      "text" : "search-input, at the header, is not getting value, different scope perhaps"
+    },
+    "-KLU390qzR_bBZOsf_nL" : {
+      "icon" : "ion-checkmark",
+      "id" : 4,
+      "text" : "more-button show popover to choose news, source code, delete, github-update, documentation"
+    },
+    "-KLU3aQJc78FXa6Y1Bvb" : {
+      "icon" : "ion-more",
+      "id" : 5,
+      "text" : "more-button button actually do its function : go to url, show modal for edit, show confirm to delete"
+    },
+    "-KLU3b8JyyXpVSBXvmx6" : {
+      "icon" : "ion-checkmark",
+      "id" : 6,
+      "text" : "add-button show a modal to add new entry, name, url, image, github-url, ..."
+    },
+    "-KLU3cA4I3VqV5hXx4y-" : {
+      "icon" : "ion-checkmark",
+      "id" : 7,
+      "text" : "image-click goes to the documentation/API site"
+    },
+    "-KLU3d-1MSWIul5BdoBq" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 8,
+      "text" : "left-side-menu need to be reorganized"
+    },
+    "-KLU3dp-qMI3_2IagB3u" : {
+      "icon" : "ion-bug",
+      "id" : 9,
+      "text" : "first load does not seem load data from firebase...., probably should use resolve..."
+    },
+    "-KLU3eYOQDJwnDpuJudI" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 10,
+      "text" : "login-menu use oauth/social, so that user can add, modified, delete items to/from the mean full swell firebase"
+    },
+    "-KLU3fMy66PE2iBzan2q" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 11,
+      "text" : "card-image should be fetched from the firebase storage"
+    },
+    "-KLU3g7_PUT09ip1gKAB" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 12,
+      "text" : "materialize-theme the theme or look, instead of default ionic"
+    },
+    "-KLU3gk7yZzm04SwVSBb" : {
+      "icon" : "ion-ios-more-outline",
+      "id" : 13,
+      "text" : "responsive-sm-icon, just show icon and caption for small screen, hide the right hand side"
+    },
+    "-KLU3hMIaV7vNUVh2N7T" : {
+      "icon" : "ion-checkmark",
+      "id" : 14,
+      "text" : "bullet-spacing is not having enough space between icon and text"
+    },
+    "-KLUMfsx1O1VT8UEzYmb" : {
+      "icon" : "ion-checkmark",
+      "id" : 17,
+      "text" : "edit/add-modal with name, github, url, image, taggs"
+    },
+    "-KLUMuxxZyJLBmzePzHl" : {
+      "icon" : "ion-checkmark",
+      "id" : 15,
+      "text" : "edit-button invoke the modal with the filled data"
+    },
+    "-KLUMxi5-nIUyhIm6NTS" : {
+      "icon" : "ion-more",
+      "id" : 16,
+      "text" : "github-button go to github or source control website"
+    }
+  }
+}

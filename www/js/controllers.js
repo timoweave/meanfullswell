@@ -32,7 +32,7 @@ function filter_firebase(firebase_inputs, filter_text)
     return result
   }
   var output_keys = Object.keys(firebase_outputs);
-  console.log("result", firebase_outputs, "outputs", output_keys.length, "inputs", input_keys.length);
+  // console.log("result", firebase_outputs, "outputs", output_keys.length, "inputs", input_keys.length);
   return firebase_outputs;
 }
 
@@ -59,7 +59,8 @@ function ToDoListCtrl($scope)
 
   $scope.todo_color = function(icon) {
     var todo_color_map = {
-      'ion-more' : 'grey',
+      'ion-more' : 'darkgrey',
+      'ion-ios-more-outline' : 'grey',
       'ion-checkmark' : 'green',
       'ion-bug' : 'red'
     };
@@ -123,7 +124,11 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
     $scope.$broadcast('scroll.refreshComplete');
   }
 
-  $scope.go_url = function(url) {
+  $scope.goto_url = function(url) {
+    if ((url === undefined)  || (url.length === 0)) {
+      alert("ALERT: donot know where to go (url undefined), please fill in this field");
+      return;
+    }
     window.location.href = url;
   }
 
@@ -133,8 +138,21 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
   }).then(function(popover) {
     $scope.more = {
       popover : popover,
-      pop : function($event) {
+      title : "",
+      input : undefined, // filled in when ng-click
+      pop : function($event, input) {
+        $scope.more.input = input;
+        $scope.more.title = input.name;
         $scope.more.popover.show($event);
+      },
+      goto_url : function(url) {
+        console.log("url", url);
+        $scope.goto_url(url);
+        $scope.more.close();
+      },
+      remove : function(data) {
+        alert("remove data " + JSON.stringify(data));
+        $scope.more.close();
       },
       close : function() {
         $scope.more.popover.hide();
@@ -145,6 +163,7 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
                          });
 
                          $scope.$on('popover.hidden', function() {
+                           delete $scope.input;
                            // Execute action
                          });
 
@@ -166,13 +185,18 @@ function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
     $scope.data = {
       form : modal,
       title : default_title,
+      input : {}, // data form modal input
       add : function() {
-        $scope.data.title = "Add Mean Info";
+        $scope.data.title = "New Entry";
+        $scope.data.input = {};
         $scope.data.form.show();
         // add data
       },
-      edit : function() {
-        $scope.data.title = "Edit Mean Info";
+      edit : function(inputs) {
+        $scope.data.input = inputs || $scope.more.input;
+        $scope.data.input.tags = $scope.data.input.tag.join(" ");
+        console.log("edit", JSON.stringify($scope.data.input));
+        $scope.data.title = "Edit " + $scope.data.input.name;
         $scope.data.form.show();
         $scope.more.close();
       },

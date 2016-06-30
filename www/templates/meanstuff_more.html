@@ -1,13 +1,12 @@
 <ion-popover-view>
-    <!-- 
-         <ion-header-bar>
-             <h1 class="title">{{card_name}}</h1>
-         </ion-header-bar>
-         -->
-    
+    <ion-header-bar>
+        <h1 class="title">{{more.title}}</h1>
+    </ion-header-bar>
+      
     <ion-content>
         <div class="popover-buttons">
-            <button class="button button-block button-stable button-fit-height icon-left ion-document-text">
+            <button class="button button-block button-stable button-fit-height icon-left ion-document-text"
+                    ng-click="more.goto_url(more.input.doc);">
                 Document
             </button>
             <!--
@@ -15,17 +14,24 @@
                 News
             </button>
             -->
-            <button class="button button-block button-stable button-fit-height icon-left ion-social-github">
+            <button class="button button-block button-stable button-fit-height icon-left ion-home"
+                    ng-click="more.goto_url(more.input.url);">
+                Home
+            </button>
+            <button class="button button-block button-stable button-fit-height icon-left ion-social-github"
+                    ng-click="more.goto_url(more.input.github);">
                 Github
             </button>
-            <button class="button button-block button-stable button-fit-height icon-left ion-pie-graph">
-                Static
+            <button class="button button-block button-stable button-fit-height icon-left ion-pie-graph"
+                    ng-click="">
+                Statistic
             </button>
             <button class="button button-block button-energized button-fit-height icon-left ion-edit"
-                    ng-click="data.edit()">
+                    ng-click="data.edit(null)">
                 Edit
             </button>
-            <button class="button button-block button-assertive button-fit-height icon-left ion-close-circled">
+            <button class="button button-block button-assertive button-fit-height icon-left ion-close-circled"
+                    ng-click="more.remove(more.input)">
                 Delete
             </button>
         </div>
