@@ -1,4 +1,84 @@
 /* Empty. Add your own CSS if you like */
+
+.header-search-label {
+    font-size: 1.0em;
+    margin-top:0.2em;
+    border-radius: 0px;
+    padding-to:0px;
+    padding-right: 0px;
+    width: 100%;
+    transition: all .5s ease;
+}
+
+.header-search-label input {
+    width:100%;
+    padding-left:5px;
+}
+
+.popover {
+  height: auto !important;
+}
+
+.popover ion-header-bar {
+  position: relative;
+}
+
+.popover ion-content {
+  top: 0;
+  position: relative;
+}
+
+.popover-inner-content {
+  width: 100%;
+  padding: 5px 20px;
+}
+
+.popover-buttons {
+    padding: 10px 10px 10px 10px;
+}
+
+.popover-buttons button {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 0px;
+    margin-top : 0px;
+    margin-bottom : 0px;
+    padding-top : 0px;
+    padding-bottom : 0px;
+}
+
+.card-thumbnail-image {
+    /* cursor : alias;*/
+    cursor : pointer;
+}
+
+.card-button-more {
+    cursor: context-menu;
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    color: ghostwhite;
+}
+
+.icon-bullet-spacing {
+    /* spacing */
+    padding-left: 3%;
+}
+
+.icon-bullet-spacing i:before {
+    width : 3%;
+    /* spacing */
+}
+/*
+.button-show-on-hover {
+    display: none
+}
+
+.button-show-on-hover:hover button {
+    display: block
+}
+*/
+
 @media screen and (max-width: 399px) {
     .responsive-card {
         width: 94%;

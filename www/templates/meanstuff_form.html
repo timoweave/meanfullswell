@@ -1,0 +1,43 @@
+<ion-modal-view>
+
+    <ion-header-bar>
+        <h1 class="title">{{data.title}}</h1>
+    </ion-header-bar>
+    
+    <ion-content>
+        <form ng-submit="submit_data()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="input.name">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">URL</span>
+                    <input type="text" ng-model="input.url">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">Image</span>
+                    <input type="text" ng-model="input.image">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Github</span>
+                    <input type="text" ng-model="input.github">
+                </label>
+                
+                <label class="item item-input">
+                    <span class="input-label">Tags</span>
+                    <input type="text" ng-model="input.tags">
+                </label>
+
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">
+                        Submit</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+    
+</ion-modal-view>

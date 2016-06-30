@@ -1,0 +1,24 @@
+firebase database:push "/todos" -d '{ "id" : 0,  "icon" : "ioni-bug", "text" : "search-input focus"}'
+firebase database:push "/todos" -d '{ "id" : 1,  "icon" : "ion-more", "text" : "move to-do list into json-server or some sort of server" }'
+firebase database:push "/todos" -d '{ "id" : 2,  "icon" : "ion-more", "text" : "search-input, at the header, animates and slides from right to left"}'
+firebase database:push "/todos" -d '{ "id" : 3,  "icon" :"ion-checkmark",  "text" : "search-input, at the header, is not getting value, different scope perhaps"}'
+firebase database:push "/todos" -d '{ "id" : 4,  "icon" :"ion-checkmark", "text" : "more-button show popover to choose news, source code, delete, github-update, documentation"}'
+firebase database:push "/todos" -d '{ "id" : 5,  "icon" :"ion-more", "text" : "more-button button actually do its function : go to url, show modal for edit, show confirm to delete"}'
+firebase database:push "/todos" -d '{ "id" : 6,  "icon" :"ion-more", "text" : "add-button show a modal to add new entry, name, url, image, github-url, ..."}'
+firebase database:push "/todos" -d '{ "id" : 7,  "icon" :"ion-checkmark", "text" : "image-click goes to the documentation/API site"}'
+firebase database:push "/todos" -d '{ "id" : 8,  "icon" :"ion-more", "text" : "left-side-menu need to be reorganized"}'
+firebase database:push "/todos" -d '{ "id" : 9,  "icon" :"ion-bug", "text" : "first load does not seem load data from firebase...., probably should use resolve..."}'
+firebase database:push "/todos" -d '{ "id" : 10, "icon" :"ion-more", "text" : "login-menu use oauth/social, so that user can add, modified, delete items to/from the mean full swell firebase"}'
+firebase database:push "/todos" -d '{ "id" : 11, "icon" :"ion-more", "text" : "card-image should be fetched from the firebase storage"}'
+firebase database:push "/todos" -d '{ "id" : 12, "icon" :"ion-more", "text" : "materialize-theme the theme or look, instead of default ionic"}'
+firebase database:push "/todos" -d '{ "id" : 13, "icon" :"ion-more", "text" : "responsive-sm-icon, just show icon and caption for small screen, hide the right hand side"}'  
+firebase database:push "/todos" -d '{ "id" : 14,  "icon" : "ion-checkmark", "text" : "bullet-spacing is not having enough space between icon and text" }'
+firebase database:push "/todos" -d '{ "id" : 15,  "icon" : "ion-more", "text" : "edit-button invoke the modal with the filled data" }'
+firebase database:push "/todos" -d '{ "id" : 16,  "icon" : "ion-more", "text" : "github-button invoke the modal with the filled data" }'
+
+firebase database:push "/todos" -d '{ "id" : 17,  "icon" : "ion-checkmark", "text" : "edit/add-modal with name, github, url, image, taggs" }'
+
+####
+#### firebase database:push "/todos" -d '{ "id" : 0, "icon" : "", "text" : ""}'
+
+

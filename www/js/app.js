@@ -1,11 +1,9 @@
-// Ionic Starter App
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
-angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
+angular.module('MeanStarter', ['ionic',
+                               'MeanStarter.controllers',
+                               'MeanStarter.services'])
 
+// angular.module('MeanStarter', ...)
 .run(function($ionicPlatform) {
 
   $ionicPlatform.ready(function() {
@@ -35,16 +33,19 @@ angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
 
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
+// angular.module('MeanStarter', ...)
+.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
+  // $locationProvider.html5Mode(true).hashPrefix('!');
+
+  $stateProvider
   .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
+  // $stateProvider
   .state('app.search', {
     url: '/search',
     views: {
@@ -53,7 +54,7 @@ angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
       }
     }
   })
-
+  // $stateProvider
   .state('app.browse', {
     url: '/browse',
     views: {
@@ -62,7 +63,7 @@ angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
       }
     }
   })
-
+  // $stateProvider
   .state('app.meanstuffs', {
     url: '/meanstuffs',
     views: {
@@ -72,7 +73,7 @@ angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
       }
     }
   })
-
+  // $stateProvider
   .state('app.todolist', {
     url: '/todolist',
     views: {
@@ -84,10 +85,9 @@ angular.module('MeanStarter', ['ionic', 'MeanStarter.controllers'])
   })
 
   ;
-
-
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/meanstuffs');
 })
 
+// angular.module('MeanStarter', ...)
 ;

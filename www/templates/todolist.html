@@ -1,9 +1,13 @@
-<ion-view view-title="To Do List">
-  <ion-content>
-      <ion-list>
-          <ion-item ng-repeat="todo in todo_list">
-              <i class="icon ion-bug"></i> {{todo}}
-          </ion-item>
-      </ion-list>
-  </ion-content>
+<ion-view view-title="Issue List">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="todo in todo_list"
+                      class="icon-bullet-spacing"
+                      style="color:{{todo_color(todo.icon)}}"
+                      >
+                <i class="icon {{todo.icon}}"></i>
+                {{todo.text}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>

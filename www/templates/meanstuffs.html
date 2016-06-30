@@ -1,26 +1,37 @@
-<ion-view view-title="Mean Fullswell">
+<ion-view view-title="Mean Tiles">
 
     <ion-nav-title>
-        <div ng-show="!shouldShowSearchInput()" style="text-align: center">
-            Mean Full Swell
+        <div ng-show="!search_input.show()" style="text-align: center">
+            Mean Tiles
         </div>
-        <div ng-show="shouldShowSearchInput()">
-            <label ng-show="shouldShowSearchInput()"
-                   class="item-input-wrapper"
-                   style="font-size: 1.1em; margin-top:0.20em; border-radius: 0px; padding-right: 0px;">
+        <!--
+            <divstyle="text-align: center">            
+                Mean Full Swell
+            </div>
+        -->
+        <div ng-show="search_input.show()">
+            <label ng-show="search_input.show()" 
+                   class="item-input-wrapper header-search-label">
                 <i class="icon ion-ios-search placeholder-icon"></i>
-                <input type="search" placeholder="Search" style="width:100%; padding-left:5px;"
-                       ng-model="mean_filter_text">
+                <input type="search" placeholder="Search"
+                       id="search_input_box"
+                       ng-model="$parent.mean_items_filter_text">
             </label>
         </div>
+        
+
     </ion-nav-title>
     
     <ion-nav-buttons side="secondary">
         <div class="buttons">
+            <!--
+                <button class="button button-icon ion-android-search"
+                        ng-click="showFilterBar()"></button>
+                -->
             <button class="button button-icon icon ion-android-search"
-                    ng-click="showSearchInput();"></button>
+                    ng-click="search_input.toggle();"></button>
             <button class="button button-icon icon ion-plus-circled"
-                    ng-click="add_item()">
+                    ng-click="data.add()">
             </button>
         </div>
     </ion-nav-buttons>
@@ -28,23 +39,22 @@
     <ion-content>
         <ion-refresher
              pulling-text="Pull to refresh..."
-             on-refresh="refresh_items()">
+             on-refresh="ion_refresher_revive()">
         </ion-refresher>
         <div class="card responsive-card"
-             ng-repeat="item in mean_items | match_text:mean_filter_text ">
+             ng-repeat="item in mean_items | mean_items_filter : mean_items_filter_text">
             <ion-item class="item item-thumbnail-left"
                       >
                 <img ng-src="{{item.image || item.url + '/favicon.ico'}}"
-                     style="cursor:pointer;"
-                     ng-click="alert('img');">
+                     class="card-thumbnail-image"
+                     ng-click="go_url(item.url);">
                 <h1>
-                        <div class="buttons">
-                            <button class="button button-icon icon ion-more"
-                                    style="cursor:pointer; position: absolute; top: -5px; right: 5px; color: lavender"
-                                    ng-click="alert('more');">
-                            </button>
-                        </div>
-                        <!--
+                    <div class="buttons">
+                        <button class="button button-icon icon ion-more card-button-more"
+                                ng-click="more.pop($event);">
+                        </button>
+                    </div>
+                    <!--
                         <a href="#" class="item-icon-right"
                            style="position: absolute; top: 15px; right: 5px; color: lavender">
                             <i class="icon ion-more"></i>

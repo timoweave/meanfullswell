@@ -1,58 +1,91 @@
-angular.module('MeanStarter.controllers', [])
+
+angular.module('MeanStarter.controllers', ['ionic'])
+
+.filter('filter_text', function() { return filter_text; })
+
+.filter("mean_items_filter", function() { return filter_firebase; })
 
 .controller('AppCtrl', ["$scope", "$ionicModal", "$timeout", AppCtrl])
 
-.controller('MeanStuffsCtrl', ['$scope', MeanStuffsCtrlFunc])
+.controller('MeanStuffsCtrl', ['$scope', '$ionicPopover', '$ionicModal', MeanStuffsCtrl])
 
 .controller('ToDoListCtrl', ['$scope', ToDoListCtrl])
 
-.filter('match_text', function() {
-    return function(firebase_inputs, filter_text) {
-      filter_text = filter_text || "";
-      if (filter_text === "") { return firebase_inputs; }
-      var firebase_keys = Object.keys(firebase_inputs);
-      var firebase_outputs = firebase_keys.reduce(select_matched_value, []);
-      function select_matched_value(result, key) {
-        var item = firebase_inputs[key];
-        var item_str = JSON.stringify(item);
-        if (item_str.match(filter_text)) {
-          result[key] = item;
-        }
-        return result
-      }
-      return firebase_outputs;
-    };
-})
+; // angular.module('MeanStarter.controllers', [])
 
-;
+function filter_firebase(firebase_inputs, filter_text)
+{
+  filter_text = filter_text || "";
+  if (filter_text === "") { return firebase_inputs; }
+  var input_keys = Object.keys(firebase_inputs);
+  var firebase_outputs = Object.assign({}, firebase_inputs);
+  input_keys.reduce(select_matched_value, firebase_outputs);
+  function select_matched_value(result, key)
+  {
+    var item = firebase_inputs[key];
+    var item_str = JSON.stringify(item);
+    var matched = item_str.match(filter_text) ? true : false;
+    // console.log("matched", matched, "item_str", item_str);
+    if (!matched) {
+      delete result[key];
+    }
+    return result
+  }
+  var output_keys = Object.keys(firebase_outputs);
+  console.log("result", firebase_outputs, "outputs", output_keys.length, "inputs", input_keys.length);
+  return firebase_outputs;
+}
+
+function filter_text(firebase_inputs, filter_text)
+{
+  filter_text = filter_text || "";
+  if (filter_text === "") { return firebase_inputs; }
+  var firebase_keys = Object.keys(firebase_inputs);
+  var firebase_outputs = firebase_keys.reduce(select_matched_value, []);
+  function select_matched_value(result, key)
+  {
+    var item = firebase_inputs[key];
+    var item_str = JSON.stringify(item);
+    if (item_str.match(filter_text)) {
+      result[key] = item;
+    }
+    return result
+  }
+  return firebase_outputs;
+}
 
 function ToDoListCtrl($scope)
 {
-  var todo_list = [
-    '"search-input", at the header, animates and slides from right to left',
-    '"search-input", at the header, is not getting value, different scope perhaps',
-    '"more-button" show popover to choose news, source code, delete, github-update, documentation',
-    '"add-button" show a modal to add new entry, name, url, image, github-url, ...',
-    '"image click" goes to the documentation/API site',
-    '"left-side-menu" need to be reorganized',
-    '"first load" doesnot seem load data from firebase....',
-    '"login" use oauth/social, so that user can add, modified, delete items to/from the mean full swell firebase',
-    '"image" should be fetched from the firebase storage',
-    '"materialize" the theme or look, instead of default ionic',
-    '"responsive sm icon", just show icon and caption for small screen, hide the right hand side'
-  ];
 
-  $scope.todo_list = todo_list;
+  $scope.todo_color = function(icon) {
+    var todo_color_map = {
+      'ion-more' : 'grey',
+      'ion-checkmark' : 'green',
+      'ion-bug' : 'red'
+    };
+    
+    return todo_color_map[icon];
+  }
+
+  $scope.todo_list = undefined;
+  var todo_list = firebase.database().ref("todos");
+  todo_list.once('value').then(save_data("todo_list"));
+  todo_list.on('value', save_data("data_list"));
+
+  function save_data(lhs) {
+    return function(rhs) {
+      $scope[lhs] = rhs.val();
+    }
+  }
 }
 
-function MeanStuffsCtrlFunc($scope)
+function MeanStuffsCtrl($scope, $ionicPopover, $ionicModal)
 {
   // console.log("hello mean stuffs controller function", $scope.items);
 
   $scope.mean_items = [];
-  $scope.mean_items_valued = [];
   $scope.mean_tags = undefined;
-  $scope.mean_filter_text = "";
+  $scope.mean_items_filter_text = ""; // use with mean_items_filter() ...
 
   var items = firebase.database().ref("items");
   items.once('value').then(save_data("mean_items"));
@@ -68,22 +101,104 @@ function MeanStuffsCtrlFunc($scope)
     }
   }
 
-  // console.log("firebase ...");
-  $scope.filterBarInstance = undefined;
-  $scope.searchInputVisible = false;
-  $scope.shouldShowSearchInput = function () {
-    return $scope.searchInputVisible;
-  };
-  $scope.showSearchInput =  function() {
-    $scope.searchInputVisible = !$scope.searchInputVisible;
-    console.log($scope.mean_filter_text);
-    return $scope.searchInputVisible;
+  $scope.search_input = {
+    visible : false,
+    show : function() {
+      var search_input_box = document.getElementById("search_input_box");
+      if (search_input_box) {
+        if ($scope.search_input.visible) {
+          search_input_box.focus();
+        } else {
+          search_input_box.blur();
+        }
+      }
+      return $scope.search_input.visible;
+    },
+    toggle : function() {
+      return $scope.search_input.visible = !$scope.search_input.visible; }
   };
 
-  $scope.refresh_items = function () {
-    // TBD
+  $scope.ion_refresher_revive = function () {
+    // TBD : <ion-refresher> ... </ion-refresher>
     $scope.$broadcast('scroll.refreshComplete');
   }
+
+  $scope.go_url = function(url) {
+    window.location.href = url;
+  }
+
+  $scope.more = undefined; // popover menu
+  $ionicPopover.fromTemplateUrl('templates/meanstuff_more.html', {
+    scope: $scope
+  }).then(function(popover) {
+    $scope.more = {
+      popover : popover,
+      pop : function($event) {
+        $scope.more.popover.show($event);
+      },
+      close : function() {
+        $scope.more.popover.hide();
+      },
+      init_handlers : (function() {
+                         $scope.$on('$destroy', function() {
+                           $scope.more.popover.remove();
+                         });
+
+                         $scope.$on('popover.hidden', function() {
+                           // Execute action
+                         });
+
+                         $scope.$on('popover.removed', function() {
+                           // Execute action
+                         });
+                         return undefined;
+                       })()
+    };
+    
+  });
+
+  $scope.data = undefined; // data form to add/edit mean tiles, and interface with firebase
+  $ionicModal.fromTemplateUrl('templates/meanstuff_form.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    var default_title = "Mean Detail";
+    $scope.data = {
+      form : modal,
+      title : default_title,
+      add : function() {
+        $scope.data.title = "Add Mean Info";
+        $scope.data.form.show();
+        // add data
+      },
+      edit : function() {
+        $scope.data.title = "Edit Mean Info";
+        $scope.data.form.show();
+        $scope.more.close();
+      },
+      close : function() {
+        $scope.data.form.hide();
+        $scope.data.title = default_title;
+      },
+      init_handlers : (
+        function() {
+          $scope.$on('$destroy', function() {
+            $scope.data.form.remove();
+          });
+          
+          $scope.$on('modal.hidden', function() {
+            // Execute action
+          });
+          
+          $scope.$on('modal.removed', function() {
+            // Execute action
+          });
+          return undefined;
+        }
+      )()
+    };
+  });
+
 }
 
 function AppCtrl($scope, $ionicModal, $timeout) {
